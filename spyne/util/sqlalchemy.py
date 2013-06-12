@@ -222,7 +222,7 @@ class PGXml(UserDefinedType):
 
 
 class PGObjectXml(UserDefinedType):
-    def __init__(self, cls, root_tag_name=None, no_namespace=False):
+    def __init__(self, cls=None, root_tag_name=None, no_namespace=False):
         self.cls = cls
         self.root_tag_name = root_tag_name
         self.no_namespace = no_namespace
@@ -247,7 +247,7 @@ sqlalchemy.dialects.postgresql.base.ischema_names['xml'] = PGObjectXml
 
 
 class PGObjectJson(UserDefinedType):
-    def __init__(self, cls, ignore_wrappers=True, complex_as=dict):
+    def __init__(self, cls=None, ignore_wrappers=True, complex_as=dict):
         self.cls = cls
         self.ignore_wrappers = ignore_wrappers
         self.complex_as = complex_as
